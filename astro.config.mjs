@@ -10,8 +10,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   // Set this to your deployed URL to enable sitemap, canonical URLs, and OpenGraph meta tags.
-  // Without it, you'll see a harmless "Sitemap integration requires 'site'" warning during builds.
-  // site: 'https://your-site.netlify.app',
+  site: 'https://ai-consciousness-wiki.vercel.app',
   markdown: {
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex],
