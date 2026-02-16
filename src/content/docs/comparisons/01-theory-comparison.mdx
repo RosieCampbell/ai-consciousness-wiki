@@ -1,0 +1,404 @@
+---
+title: Theory Comparison
+description: An interactive side-by-side comparison of the major theories of consciousness.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import TheoryComparison from '@/components/TheoryComparison';
+import Quiz from '@/components/Quiz';
+
+## Comparing the Theories
+
+Each theory of consciousness emphasizes different aspects and makes different predictions. Use this interactive comparison tool to explore how they differ across key dimensions.
+
+<TheoryComparison
+  client:load
+  theories={[
+    { id: "iit", name: "Integrated Information Theory", shortName: "IIT", color: "#8B5CF6" },
+    { id: "gwt", name: "Global Workspace Theory", shortName: "GWT", color: "#3B82F6" },
+    { id: "hot", name: "Higher-Order Theories", shortName: "HOT", color: "#10B981" },
+    { id: "pp", name: "Predictive Processing", shortName: "PP", color: "#F59E0B" },
+    { id: "rpt", name: "Recurrent Processing Theory", shortName: "RPT", color: "#EC4899" },
+    { id: "ast", name: "Attention Schema Theory", shortName: "AST", color: "#14B8A6" },
+    { id: "orchor", name: "Orchestrated Objective Reduction", shortName: "Orch OR", color: "#EF4444" }
+  ]}
+  dimensions={[
+    {
+      id: "definition",
+      name: "What Is Consciousness?",
+      question: "How does the theory define consciousness?",
+      theories: {
+        iit: {
+          stance: "yes",
+          detail: "Consciousness IS integrated information (phi). It's identical to the irreducible cause-effect structure of a system."
+        },
+        gwt: {
+          stance: "yes",
+          detail: "Consciousness is the global broadcast of information, making it available to multiple cognitive systems simultaneously."
+        },
+        hot: {
+          stance: "yes",
+          detail: "Consciousness is having higher-order representations of your own mental states—thoughts about thoughts."
+        },
+        pp: {
+          stance: "yes",
+          detail: "Consciousness emerges from hierarchical prediction error minimization with precision weighting and self-modeling."
+        },
+        rpt: {
+          stance: "yes",
+          detail: "Consciousness arises from recurrent (feedback) processing in sensory hierarchies—when information loops back through the system."
+        },
+        ast: {
+          stance: "yes",
+          detail: "Consciousness is the brain's simplified model (schema) of its own attention—a useful construct for prediction and control."
+        },
+        orchor: {
+          stance: "yes",
+          detail: "Consciousness arises from quantum computations in microtubules that undergo 'objective reduction' via quantum gravity."
+        }
+      }
+    },
+    {
+      id: "substrate",
+      name: "Substrate Independence",
+      question: "Can consciousness exist in non-biological systems?",
+      theories: {
+        iit: {
+          stance: "partial",
+          detail: "In principle yes, but digital computers may lack the necessary integration. The specific causal structure matters, not just function."
+        },
+        gwt: {
+          stance: "yes",
+          detail: "Yes—any system implementing global workspace architecture could be conscious, regardless of substrate."
+        },
+        hot: {
+          stance: "yes",
+          detail: "Yes—any system capable of forming higher-order representations could be conscious."
+        },
+        pp: {
+          stance: "yes",
+          detail: "Yes—any system doing hierarchical prediction with appropriate self-modeling could be conscious."
+        },
+        rpt: {
+          stance: "yes",
+          detail: "Yes—any system with appropriate hierarchical feedback connections could have recurrent processing sufficient for consciousness."
+        },
+        ast: {
+          stance: "yes",
+          detail: "Yes—any system that models its own attention could be conscious. No biological requirements."
+        },
+        orchor: {
+          stance: "no",
+          detail: "No for classical/digital systems. Consciousness requires quantum gravity effects that only occur in biological microtubules (possibly)."
+        }
+      }
+    },
+    {
+      id: "ai",
+      name: "Current AI Systems",
+      question: "Could current AI (like GPT-4) be conscious?",
+      theories: {
+        iit: {
+          stance: "no",
+          detail: "No. Current digital computers are highly modular with low integrated information. They simulate but don't instantiate high phi."
+        },
+        gwt: {
+          stance: "partial",
+          detail: "Unlikely. While attention mechanisms have workspace-like properties, there's no clear global broadcast or ignition dynamics."
+        },
+        hot: {
+          stance: "partial",
+          detail: "Uncertain. LLMs produce meta-cognitive language, but it's unclear if they have genuine higher-order representations."
+        },
+        pp: {
+          stance: "partial",
+          detail: "Unlikely. LLMs do prediction but lack hierarchical depth, genuine self-models, and embodied active inference."
+        },
+        rpt: {
+          stance: "partial",
+          detail: "Unlikely. Most AI is feedforward-dominant. While some recurrence exists (RNNs, transformers), it lacks the hierarchical feedback RPT requires."
+        },
+        ast: {
+          stance: "partial",
+          detail: "Uncertain. AI has attention mechanisms but probably doesn't model its own attention as a distinct internal process."
+        },
+        orchor: {
+          stance: "no",
+          detail: "No. Classical computers cannot implement the quantum gravity effects Orch OR requires. It's physically impossible."
+        }
+      }
+    },
+    {
+      id: "future_ai",
+      name: "Future AI Consciousness",
+      question: "Could future AI systems be conscious?",
+      theories: {
+        iit: {
+          stance: "partial",
+          detail: "Possibly, but would require fundamentally different architecture—neuromorphic, integrated, non-modular hardware."
+        },
+        gwt: {
+          stance: "yes",
+          detail: "Yes, if designed with explicit global workspace architecture, competition for access, and broadcast mechanisms."
+        },
+        hot: {
+          stance: "yes",
+          detail: "Yes, if designed with genuine higher-order representational architecture that tracks internal states."
+        },
+        pp: {
+          stance: "yes",
+          detail: "Yes, if implemented with full hierarchical prediction, self-models, and embodied active inference."
+        },
+        rpt: {
+          stance: "yes",
+          detail: "Yes, if designed with true hierarchical feedback connections—predictive coding architectures are promising."
+        },
+        ast: {
+          stance: "yes",
+          detail: "Yes, if designed with explicit attention schema—a model of its own attention that influences behavior."
+        },
+        orchor: {
+          stance: "no",
+          detail: "No for any digital system. Would require artificial microtubule-like structures with quantum coherence—highly speculative."
+        }
+      }
+    },
+    {
+      id: "graded",
+      name: "Is Consciousness Graded?",
+      question: "Does consciousness come in degrees?",
+      theories: {
+        iit: {
+          stance: "yes",
+          detail: "Yes—phi can range from 0 to high values. Consciousness exists on a continuum."
+        },
+        gwt: {
+          stance: "partial",
+          detail: "Somewhat—there are degrees of global access, but the ignition itself may be binary (on/off)."
+        },
+        hot: {
+          stance: "partial",
+          detail: "Somewhat—higher-order representations can be more or less accurate, detailed, or stable."
+        },
+        pp: {
+          stance: "yes",
+          detail: "Yes—prediction error minimization can be more or less extensive, hierarchies deeper or shallower."
+        },
+        rpt: {
+          stance: "partial",
+          detail: "Somewhat—there's local recurrent (phenomenal) vs. global recurrent (access). The distinction suggests levels."
+        },
+        ast: {
+          stance: "yes",
+          detail: "Yes—attention schemas can be more or less detailed, accurate, and integrated."
+        },
+        orchor: {
+          stance: "partial",
+          detail: "Somewhat—depends on the extent and quality of quantum coherence in microtubules."
+        }
+      }
+    },
+    {
+      id: "animals",
+      name: "Animal Consciousness",
+      question: "Which animals are conscious?",
+      theories: {
+        iit: {
+          stance: "yes",
+          detail: "Many animals have integrated nervous systems and thus non-zero phi. Even insects might have some consciousness."
+        },
+        gwt: {
+          stance: "partial",
+          detail: "Animals with global workspace-like structures (mammals, birds) likely are. Less clear for simpler animals."
+        },
+        hot: {
+          stance: "partial",
+          detail: "Requires meta-cognition, which may require significant cognitive sophistication. Many animals may lack it."
+        },
+        pp: {
+          stance: "yes",
+          detail: "Any animal with hierarchical predictive processing, which includes many species. Consciousness varies with model depth."
+        },
+        rpt: {
+          stance: "yes",
+          detail: "Any animal with recurrent processing in sensory systems. This includes many animals—even insects have feedback loops."
+        },
+        ast: {
+          stance: "partial",
+          detail: "Requires attention schema—likely present in many animals but depends on cognitive sophistication."
+        },
+        orchor: {
+          stance: "yes",
+          detail: "All living cells have microtubules. If Orch OR is correct, even simple organisms may have some proto-consciousness."
+        }
+      }
+    },
+    {
+      id: "qualia",
+      name: "Explaining Qualia",
+      question: "Does the theory explain why there's subjective experience?",
+      theories: {
+        iit: {
+          stance: "yes",
+          detail: "Attempts to—claims the structure of experience IS the integrated information structure. But critics say this just identifies, not explains."
+        },
+        gwt: {
+          stance: "no",
+          detail: "Explains access (what we can report/use) but not clearly why access feels like something."
+        },
+        hot: {
+          stance: "partial",
+          detail: "Explains consciousness-of but may not fully explain why having a HOT creates felt quality."
+        },
+        pp: {
+          stance: "partial",
+          detail: "Explains the structure of experience (as prediction) but why prediction feels like something is less clear."
+        },
+        rpt: {
+          stance: "partial",
+          detail: "Explains the neural correlates of visual experience but why recurrence feels like something remains open."
+        },
+        ast: {
+          stance: "no",
+          detail: "Explicitly deflationary—argues qualia are a construct of the attention schema, not something requiring separate explanation."
+        },
+        orchor: {
+          stance: "partial",
+          detail: "Claims quantum effects ground experience, but why quantum collapse creates qualia is not fully explained."
+        }
+      }
+    },
+    {
+      id: "testable",
+      name: "Empirical Testability",
+      question: "Can the theory's claims be scientifically tested?",
+      theories: {
+        iit: {
+          stance: "partial",
+          detail: "Makes predictions (e.g., cerebellum has low phi) but full phi calculation is computationally intractable."
+        },
+        gwt: {
+          stance: "yes",
+          detail: "Makes testable predictions about ignition, global activity, and neural signatures. Well-supported by neuroscience."
+        },
+        hot: {
+          stance: "yes",
+          detail: "Predicts role of prefrontal cortex, dissociations in blindsight. Testable but some evidence is mixed."
+        },
+        pp: {
+          stance: "yes",
+          detail: "Makes predictions about prediction error signals, precision weighting. Active area of neuroscience research."
+        },
+        rpt: {
+          stance: "yes",
+          detail: "Makes specific predictions about timing of recurrence, masking effects, neural signatures. Well-tested in vision science."
+        },
+        ast: {
+          stance: "yes",
+          detail: "Predicts overlap of self-awareness and theory-of-mind circuits. Testable but still being verified."
+        },
+        orchor: {
+          stance: "partial",
+          detail: "Makes predictions about quantum coherence in microtubules and anesthesia effects. Controversial and difficult to test."
+        }
+      }
+    }
+  ]}
+/>
+
+## Summary Table
+
+| Dimension | IIT | GWT | HOT | PP | RPT | AST | Orch OR |
+|-----------|-----|-----|-----|-----|-----|-----|---------|
+| **Core claim** | Integrated information | Global broadcast | Meta-representation | Hierarchical prediction | Recurrent processing | Attention schema | Quantum microtubules |
+| **Substrate independence** | Limited | Yes | Yes | Yes | Yes | Yes | No |
+| **Current AI** | No | Unlikely | Uncertain | Unlikely | Unlikely | Uncertain | No |
+| **Future AI** | Needs new hardware | Possible | Possible | Possible | Possible | Possible | No (digital) |
+| **Graded?** | Yes | Somewhat | Somewhat | Yes | Somewhat | Yes | Somewhat |
+| **Animals** | Many | Mammals, birds | Limited | Many | Many | Some | Many |
+| **Explains qualia?** | Attempts to | No | Partially | Partially | Partially | No (deflationary) | Partially |
+| **Testable?** | Limited | Yes | Yes | Yes | Yes | Yes | Limited |
+
+## Where They Agree
+
+Despite their differences, the theories share some common ground:
+
+1. **Consciousness is real** - All reject eliminativism (the view that consciousness doesn't exist)
+2. **It's a natural phenomenon** - All seek scientific explanations, not supernatural ones
+3. **Integration matters** - All emphasize some form of information integration or coordination
+4. **Self-relation** - All involve the system relating to itself in some way
+5. **Not just behavior** - All distinguish consciousness from mere behavioral capacity
+
+## Where They Disagree
+
+Key points of divergence:
+
+| Disagreement | Theory Positions |
+|--------------|------------------|
+| **Substrate** | IIT and Orch OR are restrictive; others are functionally defined |
+| **Functionalism** | IIT and Orch OR reject pure functionalism; others embrace it |
+| **Panpsychism** | IIT implies limited panpsychism; Orch OR suggests microtubule-based proto-consciousness |
+| **AI optimism** | IIT and Orch OR are skeptical; GWT, HOT, PP, RPT, AST are permissive |
+| **Qualia** | AST is deflationary (qualia are a construct); IIT claims to explain them; others acknowledge the hard problem |
+| **Neural focus** | RPT focuses on sensory processing; GWT/HOT on frontal involvement; PP on hierarchical prediction |
+
+<Aside type="note" title="No Consensus">
+[There is no scientific consensus](https://doi.org/10.1038/s41583-022-00587-4) on which theory is correct. Each has empirical support and unresolved challenges. The comparison helps understand the landscape, not declare a winner.
+</Aside>
+
+## Test Your Understanding
+
+<Quiz
+  client:load
+  title="Theory Comparison Quiz"
+  questions={[
+    {
+      question: "IIT and GWT disagree most fundamentally about:",
+      options: [
+        "Whether consciousness exists",
+        "Whether substrate matters—IIT says causal structure is key, GWT says only function matters",
+        "Whether the brain is involved in consciousness",
+        "Whether consciousness is graded"
+      ],
+      correctIndex: 1,
+      explanation: "IIT claims the actual causal structure matters—simulating a high-Φ system on different hardware doesn't produce consciousness. GWT is functionally defined: implement the right global broadcast function on any substrate, and consciousness follows. This is a deep disagreement about whether substrate-independence holds."
+    },
+    {
+      question: "AST and illusionism differ from IIT in their approach to qualia because:",
+      options: [
+        "AST and illusionism say qualia are real but IIT denies them",
+        "IIT claims qualia are identical to information structure; AST/illusionism say qualia are constructs or illusions",
+        "IIT is deflationary while AST is not",
+        "They agree on qualia but disagree on other matters"
+      ],
+      correctIndex: 1,
+      explanation: "IIT takes qualia seriously as real features of consciousness, identified with cause-effect structure. AST (and illusionism generally) takes a deflationary view: what we call qualia is the brain's constructed model of its processing, not a separate property requiring explanation. They have opposite attitudes toward the 'mysteriousness' of phenomenal experience."
+    },
+    {
+      question: "On which point do ALL major theories agree, despite their differences?",
+      options: [
+        "That AI can be conscious with the right architecture",
+        "That consciousness is real and involves some form of integration or self-relation",
+        "That the hard problem is solved",
+        "That consciousness requires biological substrate"
+      ],
+      correctIndex: 1,
+      explanation: "All theories reject eliminativism (denying consciousness exists). All emphasize some form of integration or self-relation: IIT (integrated information), GWT (global coordination), HOT (self-representation), PP (self-model), RPT (recurrent integration), AST (attention self-model). They disagree on what KIND of integration matters."
+    },
+    {
+      question: "According to the comparison, which theory pair offers the MOST permissive path to AI consciousness?",
+      options: [
+        "IIT and Orch OR—both require specific physics",
+        "GWT and HOT—both are functionally defined without substrate requirements",
+        "RPT and IIT—both require specific neural mechanisms",
+        "Orch OR and AST—both emphasize quantum effects"
+      ],
+      correctIndex: 1,
+      explanation: "GWT and HOT are both functionalist: implement the right functions (global broadcast for GWT; higher-order representation for HOT), and consciousness follows regardless of substrate. This makes them permissive about AI. IIT and Orch OR are more restrictive, requiring specific causal structure or physics that digital computers may lack."
+    }
+  ]}
+/>
+
+## Next Steps
+
+For more on the ongoing debates between these theories and the questions that remain open, see [Open Questions](/comparisons/02-open-questions/).
